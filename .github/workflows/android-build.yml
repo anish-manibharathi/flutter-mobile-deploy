@@ -17,7 +17,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.2'
+          flutter-version: '3.19.2' # Adjust this to match your pubspec.yaml
 
       - name: Install dependencies
         run: flutter pub get
@@ -25,9 +25,8 @@ jobs:
       - name: Build APK (Debug)
         run: flutter build apk --debug
 
-      - name: Upload artifact
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v3
         with:
-          name: debug-apk
+          name: app-debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
-
