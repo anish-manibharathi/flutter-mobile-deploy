@@ -27,6 +27,12 @@ jobs:
           channel: 'stable'
           cache: true
 
+      - name: Confirm Flutter version
+        run: flutter --version
+
+      - name: Upgrade Flutter (if needed)
+        run: flutter upgrade
+
       - name: Install dependencies
         run: flutter pub get
 
